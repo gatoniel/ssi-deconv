@@ -1,0 +1,53 @@
+[project]
+name = "ssi-deconv"
+version = "0.1.0"
+description = "PytorchLightning implementation of Image Deconvolution via Noise-Tolerant Self-Supervised Inversion"
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: GPU :: NVIDIA CUDA :: 12 :: 12.6",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+authors = [
+    { name = "Niklas Breitenbach-Netter", email = "niknett@gmail.com" }
+]
+requires-python = ">=3.12"
+
+dependencies = [
+    "lightning>=2.5.2",
+    "numpy>=2.3.2",
+    "tensorboard>=2.20.0",
+    "tqdm>=4.67.1",
+]
+[dependency-groups]
+dev = [
+    "coverage>=7.10.1",
+    "mypy>=1.17.1",
+    "pytest>=8.4.1",
+    "tqdm-stubs>=0.2.1",
+    "torch>=2.7.1",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.coverage.run]
+parallel = true
+source = ["src"]
+relative_files = true
+
+[build-system]
+requires = ["uv_build>=0.8.4,<0.9.0"]
+build-backend = "uv_build"
