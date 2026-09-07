@@ -1,13 +1,12 @@
 """The lightning model defining forward pass and loss calculations."""
 
-import torch
-from torch import lgamma
-from torch import nn
-from torch.optim.lr_scheduler import ReduceLROnPlateau
 import lightning as L
-from ..models.unet import UNet
+import torch
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+
 from ..models.masking import Masking
 from ..models.psf_convolution import PSFConvolutionLayer3D
+from ..models.unet import UNet
 
 
 def masked_loss(loss, mask):
