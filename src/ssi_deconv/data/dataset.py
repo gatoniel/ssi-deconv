@@ -1,9 +1,10 @@
 """Dataset class to organize training preparation."""
 
 from itertools import product
+
 import numpy as np
-from torch.utils.data import Dataset
 from skimage.exposure import rescale_intensity
+from torch.utils.data import Dataset
 
 
 def prepare_patches(imgs, patch_size):
