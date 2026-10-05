@@ -3,7 +3,7 @@ Copied from https://github.com/royerlab/ssi-code/blob/master/ssi/models/masking.
 """
 
 import torch
-import torch.nn as nn
+from torch import nn
 
 
 class Masking(nn.Module):
